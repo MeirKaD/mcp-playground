@@ -27,7 +27,7 @@ export async function POST(req: Request) {
     }
 
 // Increment request count
-    const requestCount = incrementRequestCount(userIP);
+    incrementRequestCount(userIP);
 
     await setupBrightDataMCP();
 
