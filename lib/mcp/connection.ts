@@ -2,8 +2,8 @@ import { experimental_createMCPClient as createMCPClient } from 'ai';
 import { Experimental_StdioMCPTransport as StdioMCPTransport } from 'ai/mcp-stdio';
 
 interface MCPClient {
-  client: any;
-  tools: () => Promise<Record<string, any>>;
+  client: unknown;
+  tools: () => Promise<Record<string, unknown>>;
   close: () => Promise<void>;
 }
 
@@ -177,7 +177,7 @@ export async function setupBrightDataMCP(connectionId: string = 'bright-data'): 
 /**
  * Get tools from a connection
  */
-export async function getMCPTools(connectionId: string = 'bright-data'): Promise<Record<string, any>> {
+export async function getMCPTools(connectionId: string = 'bright-data'): Promise<Record<string, unknown>> {
   const mcpPool = getMCPPool();
   const connection = await mcpPool.getConnection(connectionId);
   return await connection.tools();

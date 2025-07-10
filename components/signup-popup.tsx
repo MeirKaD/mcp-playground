@@ -37,7 +37,7 @@ export default function SignupPopup({ isOpen, onClose }: SignupPopupProps) {
             Ready for More?
           </h2>
           <p className="text-gray-300 text-sm">
-            You've reached the demo limit. Sign up for Bright Data to unlock unlimited access to 60+ powerful data collection tools.
+            You&apos;ve reached the demo limit. Sign up for Bright Data to unlock unlimited access to 60+ powerful data collection tools.
           </p>
         </div>
 

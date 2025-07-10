@@ -22,7 +22,7 @@ export default function MCPToolsStatus() {
         const response = await fetch('/api/test-mcp');
         const data = await response.json();
         setStatus(data);
-      } catch (error) {
+      } catch {
         setStatus({
           success: false,
           toolCount: 0,

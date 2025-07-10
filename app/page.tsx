@@ -2,7 +2,7 @@
 
 import { useChat } from 'ai/react';
 import { useState, useRef, useEffect } from 'react';
-import { Send, Bot, User, Zap, Globe, Database, Code2, Sparkles } from 'lucide-react';
+import { Send, Bot, User, Zap, Globe, Database, Code2 } from 'lucide-react';
 import MCPToolsStatus from '@/components/mcp-tools-status';
 import SignupPopup from '@/components/signup-popup';
 export default function Home() {
@@ -51,12 +51,12 @@ export default function Home() {
   ];
 
   const handleExampleClick = (prompt: string) => {
-    handleInputChange({ target: { value: prompt } } as any);
+    handleInputChange({ target: { value: prompt } } as React.ChangeEvent<HTMLInputElement>);
     
     setTimeout(() => {
       const formData = new FormData();
       formData.append('prompt', prompt);
-      handleSubmit({ preventDefault: () => {} } as any, { data: { prompt } });
+      handleSubmit({ preventDefault: () => {} } as React.FormEvent<HTMLFormElement>, { data: { prompt } });
     }, 100);
   };
 
@@ -75,7 +75,7 @@ export default function Home() {
             <div className="text-center py-12">
               <div className="inline-flex p-4 bg-gradient-to-r from-blue-700/10 to-blue-900/10 rounded-full mb-6">
                 <img src={"https://idsai.net.technion.ac.il/files/2022/01/Logo-600.png"} 
-                className="w-40 h-40"/>
+                className="w-40 h-40" alt="Bright Data Logo"/>
               </div>
               <h2 className="text-2xl font-bold text-white mb-4">
                 Welcome to Bright Data MCP Playground
