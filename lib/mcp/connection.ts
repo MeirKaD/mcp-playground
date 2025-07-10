@@ -3,6 +3,7 @@ import { Experimental_StdioMCPTransport as StdioMCPTransport } from 'ai/mcp-stdi
 
 interface MCPClient {
   client: unknown;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   tools: () => Promise<Record<string, any>>;
   close: () => Promise<void>;
 }
@@ -177,6 +178,7 @@ export async function setupBrightDataMCP(connectionId: string = 'bright-data'): 
 /**
  * Get tools from a connection
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function getMCPTools(connectionId: string = 'bright-data'): Promise<Record<string, any>> {
   const mcpPool = getMCPPool();
   const connection = await mcpPool.getConnection(connectionId);
